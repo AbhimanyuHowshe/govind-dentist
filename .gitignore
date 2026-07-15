@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python (chatbot demo)
+.venv/
+__pycache__/
+*.pyc
+
+# unrelated external project, not part of this repo
+/external/
