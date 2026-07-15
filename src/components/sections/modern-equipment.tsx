@@ -25,7 +25,7 @@ export function ModernEquipment() {
         {equipmentImages.map((img) => (
           <div
             key={img.id}
-            className="group relative aspect-square overflow-hidden rounded-xl shadow-sm ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-lg"
+            className="group relative aspect-square overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-xl"
           >
             <Image
               src={img.imageUrl}

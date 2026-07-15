@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { EmergencyCta } from "@/components/sections/emergency-cta";
+import { StatsStrip } from "@/components/sections/stats-strip";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { AboutClinicPreview } from "@/components/sections/about-clinic-preview";
 import { MeetDoctorsPreview } from "@/components/sections/meet-doctors-preview";
@@ -19,6 +20,7 @@ export default function Home() {
       <JsonLd data={faqSchema(generalFaqs)} />
       <Hero />
       <EmergencyCta />
+      <StatsStrip />
       <WhyChooseUs />
       <AboutClinicPreview />
       <MeetDoctorsPreview />

@@ -24,10 +24,10 @@ export function TrustBadges({
       {items.map((item) => (
         <div
           key={item.title}
-          className="flex flex-col gap-3 rounded-xl border border-border bg-background p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-lg"
+          className="flex flex-col gap-4 rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/5"
         >
-          <div className="flex size-11 items-center justify-center rounded-lg bg-brand-blue/10 text-brand-blue">
-            <item.icon className="size-6" aria-hidden="true" />
+          <div className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white shadow-md shadow-brand-blue/25">
+            <item.icon className="size-7" aria-hidden="true" />
           </div>
           <h3 className="font-heading text-lg font-semibold text-brand-navy">
             {item.title}

@@ -32,7 +32,7 @@ export function Hero() {
             <span className="size-1.5 rounded-full bg-brand-blue" aria-hidden="true" />
             Trusted Dentist in Ujjain
           </span>
-          <h1 className="text-4xl font-semibold text-brand-navy sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-brand-navy sm:text-5xl lg:text-6xl">
             Healthy Smiles Begin Here
           </h1>
           <p className="max-w-lg text-lg text-muted-foreground">
@@ -68,8 +68,8 @@ export function Hero() {
         >
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl shadow-2xl shadow-brand-navy/20 ring-1 ring-black/5">
             <Image
-              src="https://placehold.co/1200x900/0EA5E9/FFFFFF?text=Dr.+Govind+%26+Dr.+Preeti+Dental+Clinic"
-              alt="Dr. Govind Singh & Dr. Preeti Singh Dental Clinic"
+              src="https://images.unsplash.com/photo-1704455306251-b4634215d98f?w=1600&q=80"
+              alt="Bright, modern dental treatment room"
               fill
               priority
               className="object-cover"

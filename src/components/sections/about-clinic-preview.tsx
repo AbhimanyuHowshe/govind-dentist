@@ -10,7 +10,7 @@ export function AboutClinicPreview() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
         <Reveal className="relative aspect-4/3 w-full overflow-hidden rounded-2xl shadow-xl shadow-brand-navy/10 ring-1 ring-black/5">
           <Image
-            src="https://placehold.co/1000x750/0F172A/FFFFFF?text=Our+Clinic"
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&q=80"
             alt="Interior of Dr. Govind Singh & Dr. Preeti Singh Dental Clinic"
             fill
             className="object-cover"

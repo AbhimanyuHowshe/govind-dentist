@@ -5,8 +5,8 @@ export const doctors: Doctor[] = [
     slug: "dr-govind-singh",
     name: "Dr. Govind Singh",
     title: "BDS, MDS (Prosthodontics & Implantology)",
-    // PLACEHOLDER: replace with a real professional photograph.
-    photoUrl: "https://placehold.co/600x750/0EA5E9/FFFFFF?text=Dr.+Govind+Singh",
+    // PLACEHOLDER: stock photo stand-in — replace with a real professional photograph before public launch.
+    photoUrl: "https://images.unsplash.com/photo-1758691463384-771db2f192b3?w=800&q=80",
     photoAlt: "Portrait of Dr. Govind Singh",
     qualifications: [
       "Bachelor of Dental Surgery (BDS)",
@@ -30,8 +30,8 @@ export const doctors: Doctor[] = [
     slug: "dr-preeti-singh",
     name: "Dr. Preeti Singh",
     title: "BDS, MDS (Periodontics & Pedodontics)",
-    // PLACEHOLDER: replace with a real professional photograph.
-    photoUrl: "https://placehold.co/600x750/14B8A6/FFFFFF?text=Dr.+Preeti+Singh",
+    // PLACEHOLDER: stock photo stand-in — replace with a real professional photograph before public launch.
+    photoUrl: "https://images.unsplash.com/photo-1713865467253-ce0ac8477d34?w=800&q=80",
     photoAlt: "Portrait of Dr. Preeti Singh",
     qualifications: [
       "Bachelor of Dental Surgery (BDS)",

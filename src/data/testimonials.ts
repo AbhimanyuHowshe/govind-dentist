@@ -31,8 +31,8 @@ export const testimonials: Testimonial[] = [
     source: "clinic",
     // PLACEHOLDER before/after images — demo only. Do not launch with these; replace
     // with real, patient-consented photography and keep consentGiven accurate.
-    beforeImageUrl: "https://placehold.co/500x500/94A3B8/FFFFFF?text=Before+%28Placeholder%29",
-    afterImageUrl: "https://placehold.co/500x500/0EA5E9/FFFFFF?text=After+%28Placeholder%29",
+    beforeImageUrl: "https://placehold.co/500x500/94A3B8/FFFFFF.png?text=Before+%28Placeholder%29",
+    afterImageUrl: "https://placehold.co/500x500/0EA5E9/FFFFFF.png?text=After+%28Placeholder%29",
     consentGiven: true,
   },
   {

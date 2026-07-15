@@ -10,7 +10,7 @@ export function DoctorCard({
   variant?: "full" | "summary";
 }) {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl border border-border bg-background shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-lg">
+    <div className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/5">
       <div className="relative aspect-4/5 w-full overflow-hidden bg-brand-soft-gray">
         <Image
           src={doctor.photoUrl}
