@@ -24,13 +24,12 @@ export const siteConfig: SiteConfig = {
     latitude: 23.1765,
     longitude: 75.7885,
   },
-  // PLACEHOLDER: replace with the clinic's real phone number.
-  phone: "+910000000000",
-  phoneDisplay: "0000000000",
-  // PLACEHOLDER: replace with the clinic's real contact email.
-  email: "info@govindpreetidental.com",
-  // PLACEHOLDER: set to a real WhatsApp number (e.g. "910000000000") once available. WhatsAppButton renders nothing while null.
-  whatsappNumber: null,
+  phone: "+917771818143",
+  phoneDisplay: "7771818143",
+  landline: "+9173425511118",
+  landlineDisplay: "0734-25511118",
+  email: "drgovindsingh@rediffmail.com",
+  whatsappNumber: "917771818143",
   hours: [
     { day: "Monday – Saturday", hours: "9:00 AM – 8:00 PM" },
     { day: "Sunday", hours: "10:00 AM – 2:00 PM (Emergency only)" },

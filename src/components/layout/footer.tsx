@@ -55,6 +55,13 @@ export function Footer() {
               {siteConfig.phoneDisplay}
             </a>
             <a
+              href={`tel:${siteConfig.landline}`}
+              className="flex items-center gap-2 hover:text-brand-teal"
+            >
+              <Phone className="size-4 shrink-0 text-brand-teal" aria-hidden="true" />
+              {siteConfig.landlineDisplay}
+            </a>
+            <a
               href={`mailto:${siteConfig.email}`}
               className="flex items-center gap-2 hover:text-brand-teal"
             >

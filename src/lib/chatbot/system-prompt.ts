@@ -53,7 +53,8 @@ Tagline: ${siteConfig.tagline}
 Description: ${siteConfig.description}
 
 Address: ${fullAddressString}
-Phone: ${siteConfig.phoneDisplay}
+Phone (mobile): ${siteConfig.phoneDisplay}
+Phone (landline): ${siteConfig.landlineDisplay}
 Email: ${siteConfig.email}
 
 Working Hours:

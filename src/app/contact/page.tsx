@@ -48,6 +48,13 @@ export default function ContactPage() {
               {siteConfig.phoneDisplay}
             </a>
             <a
+              href={`tel:${siteConfig.landline}`}
+              className="flex items-center gap-3 text-muted-foreground hover:text-brand-blue"
+            >
+              <Phone className="size-5 shrink-0 text-brand-blue" aria-hidden="true" />
+              {siteConfig.landlineDisplay}
+            </a>
+            <a
               href={`mailto:${siteConfig.email}`}
               className="flex items-center gap-3 text-muted-foreground hover:text-brand-blue"
             >
