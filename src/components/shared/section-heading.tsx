@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SplitHeading } from "@/components/shared/split-heading";
 
 interface SectionHeadingProps {
   eyebrow?: string;
@@ -29,9 +30,11 @@ export function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-brand-navy sm:text-4xl">
-        {title}
-      </h2>
+      <SplitHeading
+        as="h2"
+        text={title}
+        className="text-3xl font-bold tracking-tight text-brand-navy sm:text-4xl"
+      />
       {description && (
         <p
           className={cn(

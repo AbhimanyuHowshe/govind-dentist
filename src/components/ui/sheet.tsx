@@ -48,7 +48,7 @@ function SheetContent({
 }) {
   return (
     <SheetPortal>
-      <SheetOverlay />
+      <SheetOverlay className="bg-black/40" />
       <SheetPrimitive.Popup
         data-slot="sheet-content"
         data-side={side}
@@ -64,14 +64,13 @@ function SheetContent({
             data-slot="sheet-close"
             render={
               <Button
-                variant="ghost"
-                className="absolute top-3 right-3"
-                size="icon-sm"
+                variant="outline"
+                className="absolute top-3 right-3 border-border bg-background shadow-sm"
+                size="icon"
               />
             }
           >
-            <XIcon
-            />
+            <XIcon className="size-5" />
             <span className="sr-only">Close</span>
           </SheetPrimitive.Close>
         )}

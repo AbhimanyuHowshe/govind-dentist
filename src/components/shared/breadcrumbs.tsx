@@ -9,9 +9,15 @@ import {
 } from "@/components/ui/breadcrumb";
 import type { Crumb } from "@/lib/schema/breadcrumb-schema";
 
-export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
+export function Breadcrumbs({
+  crumbs,
+  className,
+}: {
+  crumbs: Crumb[];
+  className?: string;
+}) {
   return (
-    <Breadcrumb>
+    <Breadcrumb className={className}>
       <BreadcrumbList>
         {crumbs.map((crumb, index) => {
           const isLast = index === crumbs.length - 1;

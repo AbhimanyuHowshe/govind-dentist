@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/page-hero";
 import { DoctorCard } from "@/components/shared/doctor-card";
 import { CtaBanner } from "@/components/shared/cta-banner";
+import { Reveal } from "@/components/shared/reveal";
 import { JsonLd } from "@/components/shared/json-ld";
 import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema/breadcrumb-schema";
@@ -32,11 +33,15 @@ export default function DoctorsPage() {
         ]}
       />
 
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {doctors.map((doctor) => (
-            <DoctorCard key={doctor.slug} doctor={doctor} variant="full" />
-          ))}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {doctors.map((doctor, i) => (
+              <Reveal key={doctor.slug} direction={i % 2 === 0 ? "left" : "right"}>
+                <DoctorCard doctor={doctor} variant="full" />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

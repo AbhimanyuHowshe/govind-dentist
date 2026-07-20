@@ -43,27 +43,29 @@ export default function GalleryPage() {
         ]}
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <Tabs defaultValue="all">
-          <TabsList className="mb-8 flex-wrap">
+      <section className="bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <Tabs defaultValue="all">
+            <TabsList className="mb-8 h-auto flex-wrap gap-1.5 group-data-horizontal/tabs:h-auto">
+              {categories.map((cat) => (
+                <TabsTrigger key={cat.value} value={cat.value}>
+                  {cat.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
             {categories.map((cat) => (
-              <TabsTrigger key={cat.value} value={cat.value}>
-                {cat.label}
-              </TabsTrigger>
+              <TabsContent key={cat.value} value={cat.value}>
+                <GalleryLightbox
+                  images={
+                    cat.value === "all"
+                      ? galleryImages
+                      : galleryImages.filter((img) => img.category === cat.value)
+                  }
+                />
+              </TabsContent>
             ))}
-          </TabsList>
-          {categories.map((cat) => (
-            <TabsContent key={cat.value} value={cat.value}>
-              <GalleryLightbox
-                images={
-                  cat.value === "all"
-                    ? galleryImages
-                    : galleryImages.filter((img) => img.category === cat.value)
-                }
-              />
-            </TabsContent>
-          ))}
-        </Tabs>
+          </Tabs>
+        </div>
       </section>
 
       <CtaBanner />

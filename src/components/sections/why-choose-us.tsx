@@ -51,18 +51,18 @@ const items: TrustBadge[] = [
 
 export function WhyChooseUs() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Why Choose Us"
-          title="Care You Can Trust"
-          description="From the moment you walk in, we focus on your comfort, safety, and long-term oral health."
-          className="mb-10"
-        />
-      </Reveal>
-      <Reveal delay={0.1}>
+    <section className="bg-background">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Why Choose Us"
+            title="Care You Can Trust"
+            description="From the moment you walk in, we focus on your comfort, safety, and long-term oral health."
+            className="mb-10"
+          />
+        </Reveal>
         <TrustBadges items={items} />
-      </Reveal>
+      </div>
     </section>
   );
 }

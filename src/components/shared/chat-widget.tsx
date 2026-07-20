@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion, type PanInfo } from "motion/react";
 import { MessageCircle, Send, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/data/site-config";
+import { useChatVisibility } from "@/lib/chat-visibility";
+import { useKeyboardLikelyOpen } from "@/lib/use-keyboard-open";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -29,6 +31,21 @@ export function ChatWidget() {
   const inputRef = useRef<HTMLInputElement>(null);
   const panelId = useId();
   const shouldReduceMotion = useReducedMotion();
+  const { setChatOpen } = useChatVisibility();
+  const [isMobile, setIsMobile] = useState(false);
+  const keyboardOpen = useKeyboardLikelyOpen();
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    setIsMobile(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    setChatOpen(open);
+  }, [open, setChatOpen]);
 
   useEffect(() => {
     if (open) {
@@ -40,14 +57,50 @@ export function ChatWidget() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
+  // Opening pushes a history entry so the hardware/gesture back button closes
+  // the chat instead of navigating the user away from the site entirely —
+  // otherwise a full-screen mobile panel has no obvious way back for a
+  // naive user beyond spotting the small close button.
+  useEffect(() => {
+    if (!open) return;
+    window.history.pushState({ chatOpen: true }, "");
+  }, [open]);
+
+  useEffect(() => {
+    const onPopState = () => setOpen(false);
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const closeChat = useCallback(() => {
+    if (open) window.history.back();
+  }, [open]);
+
+  const toggleChat = useCallback(() => {
+    if (open) {
+      window.history.back();
+    } else {
+      setOpen(true);
+    }
+  }, [open]);
+
+  const handleDragEnd = useCallback(
+    (_: unknown, info: PanInfo) => {
+      if (info.offset.y > 100 || info.velocity.y > 500) {
+        closeChat();
+      }
+    },
+    [closeChat],
+  );
+
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") closeChat();
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [open, closeChat]);
 
   async function sendMessage(text: string) {
     const trimmed = text.trim();
@@ -111,24 +164,41 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: shouldReduceMotion ? 0 : 16, scale: shouldReduceMotion ? 1 : 0.97 }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.18, ease: "easeOut" }}
-            className="flex h-[min(600px,calc(100vh-7rem))] w-[min(380px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl"
+            className="fixed inset-0 z-50 flex h-dvh w-full flex-col overflow-hidden border-border bg-background shadow-2xl sm:static sm:inset-auto sm:z-auto sm:h-[min(600px,calc(100dvh-7rem))] sm:w-[min(380px,calc(100vw-2rem))] sm:rounded-2xl sm:border"
+            {...(isMobile && !shouldReduceMotion
+              ? {
+                  drag: "y" as const,
+                  dragConstraints: { top: 0, bottom: 0 },
+                  dragElastic: { top: 0, bottom: 0.5 },
+                  onDragEnd: handleDragEnd,
+                }
+              : {})}
           >
-            <header className="flex items-center gap-3 border-b border-border bg-brand-navy px-4 py-3.5 text-white">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10">
-                <Sparkles className="size-4.5" aria-hidden="true" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold">{siteConfig.shortName}</p>
-                <p className="truncate text-xs text-white/70">Ask us anything about your dental care</p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="flex size-8 shrink-0 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-                aria-label="Close chat"
+            <header className="flex flex-col border-b border-border bg-brand-navy pt-[max(0.5rem,env(safe-area-inset-top))] text-white">
+              <div
+                className="flex justify-center py-1.5 sm:hidden"
+                aria-hidden="true"
               >
-                <X className="size-4.5" aria-hidden="true" />
-              </button>
+                <span className="h-1 w-10 rounded-full bg-white/25" />
+              </div>
+              <div className="flex items-center gap-3 px-4 pb-3.5">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/10">
+                  <Sparkles className="size-4.5" aria-hidden="true" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-semibold">{siteConfig.shortName}</p>
+                  <p className="truncate text-xs text-white/70">Ask us anything about your dental care</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={closeChat}
+                  className="flex shrink-0 items-center gap-1.5 rounded-full py-1.5 pr-1 pl-2.5 text-sm font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white sm:size-8 sm:justify-center sm:p-0"
+                  aria-label="Close chat"
+                >
+                  <span className="sm:hidden">Close</span>
+                  <X className="size-4.5" aria-hidden="true" />
+                </button>
+              </div>
             </header>
 
             <div
@@ -193,7 +263,7 @@ export function ChatWidget() {
                 e.preventDefault();
                 sendMessage(input);
               }}
-              className="flex items-center gap-2 border-t border-border bg-background p-3"
+              className="flex items-center gap-2 border-t border-border bg-background p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
             >
               <input
                 ref={inputRef}
@@ -219,12 +289,15 @@ export function ChatWidget() {
 
       <motion.button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={toggleChat}
         whileTap={{ scale: shouldReduceMotion ? 1 : 0.94 }}
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={open ? "Close chat" : "Chat with our assistant"}
-        className="flex size-14 items-center justify-center rounded-full bg-brand-blue text-white shadow-lg transition-transform hover:scale-105"
+        className={cn(
+          "flex size-14 items-center justify-center rounded-full bg-brand-blue text-white shadow-lg transition-transform hover:scale-105",
+          (open || keyboardOpen) && "hidden sm:flex",
+        )}
       >
         <AnimatePresence mode="wait" initial={false}>
           <motion.span

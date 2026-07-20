@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { buildChatSystemPrompt } from "@/lib/chatbot/system-prompt";
+import { buildChatSystemPrompt, buildServiceDetailContext } from "@/lib/chatbot/system-prompt";
 
 export const maxDuration = 30;
 
@@ -39,6 +39,16 @@ export async function POST(request: NextRequest) {
     return new Response("Invalid request.", { status: 400 });
   }
 
+  const latestUserMessage = [...trimmedHistory].reverse().find((m) => m.role === "user");
+  const serviceDetail = latestUserMessage
+    ? buildServiceDetailContext(latestUserMessage.content)
+    : "";
+
+  const systemMessages = [
+    { role: "system" as const, content: buildChatSystemPrompt() },
+    ...(serviceDetail ? [{ role: "system" as const, content: serviceDetail }] : []),
+  ];
+
   const upstream = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -48,10 +58,7 @@ export async function POST(request: NextRequest) {
     body: JSON.stringify({
       model: MODEL_NAME,
       stream: true,
-      messages: [
-        { role: "system", content: buildChatSystemPrompt() },
-        ...trimmedHistory,
-      ],
+      messages: [...systemMessages, ...trimmedHistory],
     }),
   });
 

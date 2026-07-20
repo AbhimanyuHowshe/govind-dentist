@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion, useReducedMotion } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Dialog,
@@ -13,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import type { GalleryImage } from "@/types/gallery";
 
 export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
+  const shouldReduceMotion = useReducedMotion();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const current = openIndex !== null ? images[openIndex] : null;
@@ -29,12 +31,20 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
     <>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {images.map((image, index) => (
-          <button
+          <motion.button
             key={image.id}
             type="button"
             onClick={() => setOpenIndex(index)}
             className="group relative aspect-square overflow-hidden rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
             aria-label={`View larger image: ${image.alt}`}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24, scale: shouldReduceMotion ? 1 : 0.94 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{
+              duration: shouldReduceMotion ? 0 : 0.45,
+              delay: shouldReduceMotion ? 0 : (index % 4) * 0.08,
+              ease: "easeOut",
+            }}
           >
             <Image
               src={image.imageUrl}
@@ -43,7 +53,7 @@ export function GalleryLightbox({ images }: { images: GalleryImage[] }) {
               className="object-cover transition-transform group-hover:scale-105"
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
             />
-          </button>
+          </motion.button>
         ))}
       </div>
 

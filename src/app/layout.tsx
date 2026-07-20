@@ -9,10 +9,15 @@ import { SkipToContent } from "@/components/layout/skip-to-content";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { ChatWidget } from "@/components/shared/chat-widget";
 import { JsonLd } from "@/components/shared/json-ld";
+import { MagicCursor } from "@/components/shared/magic-cursor";
+import { Preloader } from "@/components/shared/preloader";
+import { ScrollProgressBar } from "@/components/shared/scroll-progress-bar";
+import { BackToTop } from "@/components/shared/back-to-top";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { organizationSchema } from "@/lib/schema/organization-schema";
 import { siteConfig } from "@/data/site-config";
+import { ChatVisibilityProvider } from "@/lib/chat-visibility";
 
 const bodyFont = Inter({
   variable: "--font-body",
@@ -53,15 +58,21 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <JsonLd data={organizationSchema()} />
         <TooltipProvider>
-          <SkipToContent />
-          <Header />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <Footer />
-          <MobileTabBar />
-          <WhatsAppButton />
-          <ChatWidget />
+          <ChatVisibilityProvider>
+            <Preloader />
+            <ScrollProgressBar />
+            <MagicCursor />
+            <SkipToContent />
+            <Header />
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
+            <Footer />
+            <MobileTabBar />
+            <WhatsAppButton />
+            <ChatWidget />
+            <BackToTop />
+          </ChatVisibilityProvider>
           <Toaster />
         </TooltipProvider>
       </body>

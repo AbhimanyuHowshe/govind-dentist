@@ -3,19 +3,22 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/shared/reveal";
+import { ImageWipeReveal } from "@/components/shared/image-wipe-reveal";
 
 export function AboutClinicPreview() {
   return (
     <section className="bg-brand-soft-gray">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
         <Reveal className="relative aspect-4/3 w-full overflow-hidden rounded-2xl shadow-xl shadow-brand-navy/10 ring-1 ring-black/5">
-          <Image
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&q=80"
-            alt="Interior of Dr. Govind Singh & Dr. Preeti Singh Dental Clinic"
-            fill
-            className="object-cover"
-            sizes="(min-width: 1024px) 500px, 100vw"
-          />
+          <ImageWipeReveal className="absolute inset-0">
+            <Image
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&q=80"
+              alt="Interior of Dr. Govind Singh & Dr. Preeti Singh Dental Clinic"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 500px, 100vw"
+            />
+          </ImageWipeReveal>
         </Reveal>
         <Reveal delay={0.1} className="flex flex-col gap-4">
           <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-blue/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-brand-blue uppercase">

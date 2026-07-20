@@ -14,7 +14,7 @@
   --color-brand-blue-light: var(--brand-blue-light);
   --color-brand-blue-dark: var(--brand-blue-dark);
   --color-brand-navy: var(--brand-navy);
-  --color-brand-teal: var(--brand-teal);
+  --color-brand-accent: var(--brand-accent);
   --color-brand-emerald: var(--brand-emerald);
   --color-brand-soft-gray: var(--brand-soft-gray);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -34,6 +34,7 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-warning: var(--warning);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -56,33 +57,61 @@
 }
 
 :root {
-  /* Brand palette (CLAUDE.md). Interactive/text shades deepened from the
-     literal CLAUDE.md hexes to meet WCAG AA contrast (4.5:1 text / 3:1 UI)
-     against white; --brand-blue-light preserves the original hex for
-     decorative-only uses (e.g. gradients, subtle backgrounds). */
-  --brand-blue-light: #0ea5e9;
-  --brand-blue: #0369a1;
-  --brand-blue-dark: #0284c7;
-  --brand-navy: #0f172a;
-  --brand-teal: #0f766e;
-  --brand-emerald: #047857;
-  --brand-soft-gray: #f8fafc;
+  /* Brand palette: Violet-Body EXPERIMENT (2026-07-19, roles swapped from
+     the prior Dark-Navy-Body pass). The page's outer background (body) is
+     now solid violet #6D5EF7 — the same hex the primary button used a
+     moment ago. Since the button can no longer use that hex too (it would
+     vanish into a same-color page), --brand-blue/-dark are now #000099
+     navy instead, so buttons/links pop against the violet backdrop the
+     same way they popped against navy before. --brand-blue-light is a
+     lightened navy tint (#6666B3) for hover states / gradient-light stops.
+     Cool white (#F8FAFC) is unchanged: still every card/section surface
+     (--background/--card/--popover).
 
-  --background: #ffffff;
+     --brand-soft-gray stays an OPAQUE pale cool-gray (#EEF2F8, changed in
+     the navy-body pass) rather than the original 30%-opacity overlay —
+     translucent would now tint hero/testimonials/services-preview/
+     page-hero sections violet instead of showing navy text cleanly.
+     Opaque keeps those sections safely cool-white. Same logic covers
+     --secondary/--muted, which alias this token.
+
+     Accent purple (--brand-accent, #8B5CF6) and success/warning/error tokens
+     are unchanged from the prior pass. Variable names below are legacy
+     (brand-accent/brand-emerald) but hold the accent-purple and
+     success-green roles respectively, kept as-is to avoid renaming every
+     Tailwind utility usage across components — this is a color-only pass,
+     no component edits.
+
+     --brand-emerald (success) and --destructive (error) remain deepened
+     one step from the original #22C55E/#EF4444 requests: those render at
+     2.28:1 and 3.76:1 against white, both below WCAG AA (4.5:1) for the
+     text/white-on-button uses those tokens have in this codebase
+     (WhatsApp button label, form error text). --warning is likewise
+     deepened for the same reason. */
+  --brand-blue-light: #6666b3;
+  --brand-blue: #000099;
+  --brand-blue-dark: #000099;
+  --brand-navy: #1e293b;
+  --brand-accent: #8b5cf6;
+  --brand-emerald: #15803d;
+  --brand-soft-gray: #eef2f8;
+  --warning: #b45309;
+
+  --background: #f8fafc;
   --foreground: var(--brand-navy);
-  --card: #ffffff;
+  --card: #f8fafc;
   --card-foreground: var(--brand-navy);
-  --popover: #ffffff;
+  --popover: #f8fafc;
   --popover-foreground: var(--brand-navy);
   --primary: var(--brand-blue);
   --primary-foreground: #ffffff;
   --secondary: var(--brand-soft-gray);
   --secondary-foreground: var(--brand-navy);
   --muted: var(--brand-soft-gray);
-  --muted-foreground: #475569;
-  --accent: var(--brand-teal);
+  --muted-foreground: #64748b;
+  --accent: var(--brand-accent);
   --accent-foreground: #ffffff;
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: #dc2626;
   --border: #e2e8f0;
   --input: #e2e8f0;
   --ring: var(--brand-blue);
@@ -141,10 +170,25 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    /* Flat #6D5EF7 violet page background. Virtually every content section
+       is opaque cool-white on top (bg-background or the now-opaque
+       bg-brand-soft-gray — see --brand-soft-gray above), so this shows
+       only at page edges / mobile overscroll, not behind body text. */
+    background-color: #6d5ef7;
+    /* Guards against phantom horizontal scroll: in-flow elements with a
+       CSS transform (e.g. Reveal's sideways card slide-in, still at
+       initial translateX before scrolling into view) expand the
+       document's scrollable overflow region even though nothing is
+       visually spilling past the edge. Mobile browsers respond to that by
+       auto-widening the layout viewport past device-width, which pushes
+       fixed-position UI (WhatsApp/chat buttons) out of the visible area.
+       overflow-x: hidden on body clips that phantom region at the root. */
+    overflow-x: hidden;
   }
   html {
     @apply font-sans scroll-smooth;
+    overflow-x: hidden;
   }
   h1,
   h2,
@@ -162,6 +206,47 @@
 @layer utilities {
   .skip-link {
     @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:shadow-lg;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      var(--brand-blue) 0%,
+      var(--brand-accent) 25%,
+      var(--brand-blue-dark) 50%,
+      var(--brand-accent) 75%,
+      var(--brand-blue) 100%
+    );
+    background-size: 200% auto;
+    animation: gradient-sweep 6s linear infinite;
+  }
+
+  .gradient-text-light {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      #ffffff 0%,
+      var(--brand-blue-light) 25%,
+      #c4b5fd 50%,
+      var(--brand-blue-light) 75%,
+      #ffffff 100%
+    );
+    background-size: 200% auto;
+    animation: gradient-sweep 6s linear infinite;
+  }
+}
+
+@media (min-width: 1px) {
+  body.magic-cursor-active,
+  body.magic-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+@keyframes gradient-sweep {
+  to {
+    background-position: -200% center;
   }
 }
 

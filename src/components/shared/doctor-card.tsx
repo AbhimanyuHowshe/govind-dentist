@@ -16,7 +16,7 @@ export function DoctorCard({
           src={doctor.photoUrl}
           alt={doctor.photoAlt}
           fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-cover grayscale-[60%] transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
           sizes="(min-width: 1024px) 400px, 100vw"
         />
       </div>
@@ -29,7 +29,7 @@ export function DoctorCard({
         </div>
 
         <p className="flex items-start gap-2 text-sm text-muted-foreground">
-          <Award className="mt-0.5 size-4 shrink-0 text-brand-teal" aria-hidden="true" />
+          <Award className="mt-0.5 size-4 shrink-0 text-brand-accent" aria-hidden="true" />
           {doctor.experienceYears}+ years of experience
         </p>
 
@@ -37,7 +37,7 @@ export function DoctorCard({
           <>
             <div>
               <h4 className="mb-1.5 flex items-center gap-2 text-sm font-semibold text-brand-navy">
-                <GraduationCap className="size-4 text-brand-teal" aria-hidden="true" />
+                <GraduationCap className="size-4 text-brand-accent" aria-hidden="true" />
                 Qualifications
               </h4>
               <ul className="ml-6 list-disc text-sm text-muted-foreground">

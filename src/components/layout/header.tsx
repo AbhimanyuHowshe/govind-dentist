@@ -1,13 +1,37 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Phone, Stethoscope } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Magnetic } from "@/components/shared/magnetic";
 import { mainNav } from "@/data/nav";
 import { siteConfig } from "@/data/site-config";
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <header
+      className={cn(
+        "sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur transition-all duration-300 supports-backdrop-filter:bg-background/80",
+        scrolled && "shadow-md shadow-brand-navy/5"
+      )}
+    >
+      <div
+        className={cn(
+          "mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 transition-all duration-300 sm:px-6 lg:px-8",
+          scrolled ? "h-14" : "h-16"
+        )}
+      >
         <Link
           href="/"
           className="flex items-center gap-2 font-heading text-lg font-semibold text-brand-navy"
@@ -44,12 +68,14 @@ export function Header() {
             <Phone className="size-4" aria-hidden="true" />
             Call Now
           </Button>
-          <Button
-            render={<Link href="/contact#appointment-form" />}
-            className="hidden sm:inline-flex"
-          >
-            Book an Appointment
-          </Button>
+          <Magnetic strength={0.3}>
+            <Button
+              render={<Link href="/contact#appointment-form" />}
+              className="hidden sm:inline-flex"
+            >
+              Book an Appointment
+            </Button>
+          </Magnetic>
         </div>
       </div>
     </header>

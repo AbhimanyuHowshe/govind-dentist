@@ -5,7 +5,7 @@ import { siteConfig, fullAddressString } from "@/data/site-config";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-brand-navy text-white pb-16 md:pb-0">
+    <footer className="border-t border-border bg-[#3331A5] text-white pb-16 md:pb-0">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
           <div className="flex items-center gap-2 font-heading text-lg font-semibold">
@@ -26,7 +26,7 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm text-white/80 hover:text-brand-teal"
+                  className="text-sm text-white/80 hover:text-brand-accent"
                 >
                   {item.label}
                 </Link>
@@ -42,35 +42,35 @@ export function Footer() {
           <address className="mt-4 flex flex-col gap-3 text-sm text-white/80 not-italic">
             <span className="flex gap-2">
               <MapPin
-                className="mt-0.5 size-4 shrink-0 text-brand-teal"
+                className="mt-0.5 size-4 shrink-0 text-brand-accent"
                 aria-hidden="true"
               />
               {fullAddressString}
             </span>
             <a
               href={`tel:${siteConfig.phone}`}
-              className="flex items-center gap-2 hover:text-brand-teal"
+              className="flex items-center gap-2 hover:text-brand-accent"
             >
-              <Phone className="size-4 shrink-0 text-brand-teal" aria-hidden="true" />
+              <Phone className="size-4 shrink-0 text-brand-accent" aria-hidden="true" />
               {siteConfig.phoneDisplay}
             </a>
             <a
               href={`tel:${siteConfig.landline}`}
-              className="flex items-center gap-2 hover:text-brand-teal"
+              className="flex items-center gap-2 hover:text-brand-accent"
             >
-              <Phone className="size-4 shrink-0 text-brand-teal" aria-hidden="true" />
+              <Phone className="size-4 shrink-0 text-brand-accent" aria-hidden="true" />
               {siteConfig.landlineDisplay}
             </a>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="flex items-center gap-2 hover:text-brand-teal"
+              className="flex items-center gap-2 hover:text-brand-accent"
             >
-              <Mail className="size-4 shrink-0 text-brand-teal" aria-hidden="true" />
+              <Mail className="size-4 shrink-0 text-brand-accent" aria-hidden="true" />
               {siteConfig.email}
             </a>
             <span className="flex gap-2">
               <Clock
-                className="mt-0.5 size-4 shrink-0 text-brand-teal"
+                className="mt-0.5 size-4 shrink-0 text-brand-accent"
                 aria-hidden="true"
               />
               <span className="flex flex-col gap-0.5">

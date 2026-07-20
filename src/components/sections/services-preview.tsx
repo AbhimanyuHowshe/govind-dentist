@@ -33,13 +33,13 @@ export function ServicesPreview() {
             className="mb-10"
           />
         </Reveal>
-        <Reveal delay={0.1}>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
-            ))}
-          </div>
-        </Reveal>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {featured.map((service, i) => (
+            <Reveal key={service.slug} direction={i % 2 === 0 ? "left" : "right"} delay={(i % 4) * 0.08}>
+              <ServiceCard service={service} />
+            </Reveal>
+          ))}
+        </div>
         <div className="mt-10 flex justify-center">
           <Button render={<Link href="/services" />} variant="outline">
             View All Services

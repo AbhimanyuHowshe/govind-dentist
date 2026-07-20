@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/site-config";
 
 export function EmergencyCta() {
   return (
-    <section className="bg-gradient-to-r from-brand-navy to-[#0c2a4a]">
+    <section className="bg-gradient-to-r from-brand-navy to-[#1e1b4b]">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
         <div className="flex items-center gap-3 text-white">
           <span className="relative flex size-6 shrink-0 items-center justify-center">
