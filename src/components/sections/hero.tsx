@@ -57,7 +57,7 @@ export function Hero() {
               <Button
                 render={<Link href="/contact#appointment-form" />}
                 size="lg"
-                className="bg-background text-brand-navy shadow-lg shadow-black/20 hover:bg-background/90"
+                className="shadow-lg shadow-black/20"
               >
                 Book an Appointment
               </Button>
@@ -67,7 +67,7 @@ export function Hero() {
                 render={<a href={`tel:${siteConfig.phone}`} />}
                 size="lg"
                 variant="outline"
-                className="border-background/40 bg-transparent text-background hover:bg-background/10"
+                className="shadow-lg shadow-black/20 ring-1 ring-white/15 hover:ring-white/25"
               >
                 <Phone className="size-4" aria-hidden="true" />
                 Call Now

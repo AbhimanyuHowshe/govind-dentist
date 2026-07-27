@@ -109,6 +109,10 @@ Gradients
 
 - Violet → Blue, e.g. `linear-gradient(135deg, #6D5EF7 0%, #3B82F6 100%)` — used for buttons/icon fills/CTA text via the `brand-blue` → `brand-blue-dark` token pair, and the `.gradient-text` / `.gradient-text-light` utilities in `globals.css`.
 
+Button color (updated 2026-07-27, explicit client request — supersedes the violet/blue button color implied above)
+
+- All buttons: Near-black Navy (#00032A), via the `--brand-blue` / `--brand-blue-dark` tokens in `globals.css` (which `bg-primary` and every `bg-brand-blue` button in the codebase resolve through).
+
 Avoid:
 
 - Loud colors

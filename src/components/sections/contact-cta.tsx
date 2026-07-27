@@ -39,7 +39,7 @@ export function ContactCta() {
                 render={<a href={`tel:${siteConfig.phone}`} />}
                 size="lg"
                 variant="outline"
-                className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white"
+                className="shadow-lg shadow-black/20 ring-1 ring-white/15 hover:ring-white/25"
               >
                 <Phone className="size-4" aria-hidden="true" />
                 Call Now

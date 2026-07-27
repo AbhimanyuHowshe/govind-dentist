@@ -293,9 +293,10 @@ export function ChatWidget() {
         whileTap={{ scale: shouldReduceMotion ? 1 : 0.94 }}
         aria-expanded={open}
         aria-controls={panelId}
-        aria-label={open ? "Close chat" : "Chat with our assistant"}
+        aria-label={open ? "Close chat" : "Chat with our AI assistant"}
         className={cn(
-          "flex size-14 items-center justify-center rounded-full bg-brand-blue text-white shadow-lg transition-transform hover:scale-105",
+          "flex h-14 items-center justify-center gap-2 rounded-full bg-brand-blue text-white shadow-lg transition-transform hover:scale-105",
+          open ? "w-14" : "w-auto px-5",
           (open || keyboardOpen) && "hidden sm:flex",
         )}
       >
@@ -306,11 +307,15 @@ export function ChatWidget() {
             animate={{ opacity: 1, rotate: 0 }}
             exit={{ opacity: 0, rotate: shouldReduceMotion ? 0 : 45 }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.15 }}
+            className="flex items-center gap-2"
           >
             {open ? (
               <X className="size-6" aria-hidden="true" />
             ) : (
-              <MessageCircle className="size-6" aria-hidden="true" />
+              <>
+                <MessageCircle className="size-6 shrink-0" aria-hidden="true" />
+                <span className="text-sm font-medium">AI Assistant</span>
+              </>
             )}
           </motion.span>
         </AnimatePresence>
