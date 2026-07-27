@@ -29,6 +29,31 @@ import {
 } from "@/lib/validations/appointment-schema";
 import { TIME_SLOTS } from "@/lib/constants";
 import { services } from "@/data/services";
+import { siteConfig } from "@/data/site-config";
+
+function buildWhatsAppMessage(data: AppointmentFormValues) {
+  const serviceName =
+    services.find((s) => s.slug === data.service)?.name ?? data.service;
+  const formattedDate = new Date(data.preferredDate).toLocaleDateString(
+    "en-IN",
+    { day: "numeric", month: "long", year: "numeric" }
+  );
+
+  // WhatsApp Desktop (Windows) truncates pre-filled deep-link text at the
+  // first newline, so this stays single-line with a separator instead of \n.
+  const parts = [
+    "New Appointment Request —",
+    `Name: ${data.name}`,
+    `Phone: ${data.phone}`,
+    data.email ? `Email: ${data.email}` : null,
+    `Service: ${serviceName}`,
+    `Preferred Date: ${formattedDate}`,
+    `Preferred Time: ${data.preferredTime}`,
+    data.message ? `Message: ${data.message}` : null,
+  ].filter(Boolean);
+
+  return parts.join(" | ");
+}
 
 export function AppointmentForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">(
@@ -53,13 +78,17 @@ export function AppointmentForm() {
     },
   });
 
-  async function onSubmit() {
+  function onSubmit(data: AppointmentFormValues) {
     setStatus("submitting");
-    // Simulated submission — no backend is wired up yet. Replace with a real
-    // API call / email integration when one is available.
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+
+    if (siteConfig.whatsappNumber) {
+      const message = buildWhatsAppMessage(data);
+      const url = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
     setStatus("success");
-    toast.success("Appointment request received!");
+    toast.success("Appointment request sent via WhatsApp!");
   }
 
   if (status === "success") {
@@ -70,7 +99,8 @@ export function AppointmentForm() {
           Thank You!
         </h3>
         <p className="max-w-sm text-muted-foreground">
-          We&apos;ve received your appointment request and will call you
+          Your appointment request has been sent to us on WhatsApp. Please
+          wait for confirmation from the clinic — we&apos;ll get back to you
           shortly to confirm your visit.
         </p>
         <Button
