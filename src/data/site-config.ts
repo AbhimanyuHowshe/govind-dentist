@@ -9,7 +9,7 @@ export const siteConfig: SiteConfig = {
   tagline: "Healthy Smiles Begin Here",
   description:
     "Trusted dental care by Dr. Govind Singh & Dr. Preeti Singh in Ujjain — general dentistry, cosmetic dentistry, implants, root canal, braces, and emergency dental care.",
-  url: "https://www.govindpreetidental.com",
+  url: "https://www.drgovindsingh.com",
   address: {
     line1: "First Floor",
     line2: "Mahakal Sampanna Complex, Near Tower",
