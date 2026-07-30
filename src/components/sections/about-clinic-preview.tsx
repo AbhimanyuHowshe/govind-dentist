@@ -13,7 +13,7 @@ export function AboutClinicPreview() {
           <ImageWipeReveal className="absolute inset-0">
             <Image
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&q=80"
-              alt="Interior of Dr. Govind Singh & Dr. Preeti Singh Dental Clinic"
+              alt="Interior of Dr. Singh Dental Clinic"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 500px, 100vw"

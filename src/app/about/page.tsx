@@ -12,7 +12,7 @@ import { breadcrumbSchema } from "@/lib/schema/breadcrumb-schema";
 export const metadata: Metadata = buildMetadata({
   title: "About Us",
   description:
-    "Learn about Dr. Govind Singh & Dr. Preeti Singh Dental Clinic in Ujjain — our story, mission, patient care philosophy, and sterilization standards.",
+    "Learn about Dr. Singh Dental Clinic in Ujjain — our story, mission, patient care philosophy, and sterilization standards.",
   path: "/about",
 });
 
@@ -69,7 +69,7 @@ export default function AboutPage() {
       />
       <PageHero
         title="About Our Clinic"
-        description="Get to know the story, mission, and standards behind Dr. Govind Singh & Dr. Preeti Singh Dental Clinic."
+        description="Get to know the story, mission, and standards behind Dr. Singh Dental Clinic."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "About", path: "/about" },
@@ -88,7 +88,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1} className="flex flex-col gap-4 text-muted-foreground">
             <p>
-              Dr. Govind Singh & Dr. Preeti Singh Dental Clinic was founded
+              Dr. Singh Dental Clinic was founded
               with a simple goal: to bring modern, patient-centered dental
               care to the people of Ujjain. What started as a small practice
               has grown into a full-service dental clinic trusted by families

@@ -11,7 +11,7 @@ import { breadcrumbSchema } from "@/lib/schema/breadcrumb-schema";
 export const metadata: Metadata = buildMetadata({
   title: "Our Dental Services",
   description:
-    "Explore the full range of dental services offered in Ujjain — from general checkups to implants, braces, and cosmetic dentistry.",
+    "Explore the full range of dental services offered in Ujjain — from general checkups to root canal, braces, and cosmetic dentistry.",
   path: "/services",
 });
 

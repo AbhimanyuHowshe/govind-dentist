@@ -14,7 +14,7 @@ export const generalFaqs: Faq[] = [
   {
     question: "Do you treat children at the clinic?",
     answer:
-      "Yes, Dr. Preeti Singh has a special interest in pediatric dentistry and we welcome patients of all ages, from young children to senior citizens.",
+      "Yes, we welcome patients of all ages, from young children to senior citizens.",
   },
   {
     question: "What should I do in a dental emergency?",
@@ -22,7 +22,7 @@ export const generalFaqs: Faq[] = [
       "Call the clinic immediately so we can guide you and arrange an urgent visit. We prioritize emergency dental cases including severe toothache, broken teeth, and dental trauma.",
   },
   {
-    question: "Do you offer payment plans for treatments like implants or braces?",
+    question: "Do you offer payment plans for treatments like braces or root canal?",
     answer:
       "We believe in transparent, upfront pricing and can discuss flexible payment options for longer treatment plans during your consultation.",
   },

@@ -14,6 +14,8 @@ The website should establish trust, educate patients, generate appointment booki
 
 Dr. Govind Singh & Dr. Preeti Singh Dental Clinic
 
+Brand name (updated 2026-07-30, client-provided clinic logo — supersedes the above for anything user-facing: site title, header, footer, page copy): **Dr. Singh Dental Clinic**. The two doctors are still referred to individually by their full names (Dr. Govind Singh, Dr. Preeti Singh) in doctor bios and body copy — only the clinic/brand name itself changed.
+
 ## Address
 
 First Floor,
@@ -195,6 +197,8 @@ Include:
 - Professional memberships
 - Patient care approach
 
+Doctor facts (updated 2026-07-30, client-confirmed — supersedes any earlier MDS/specialization claims in data files): both doctors are **BDS only** (general dentists, not MDS specialists), each with **25+ years of individual experience**. Do not attribute Prosthodontics, Periodontics, or Pedodontics specialty degrees/memberships to either doctor.
+
 ---
 
 ## Services
@@ -207,19 +211,15 @@ Create dedicated SEO pages for:
 - Dental Fillings
 - Root Canal Treatment
 - Tooth Extraction
-- Dental Crowns
-- Bridges
-- Dentures
-- Dental Implants
 - Teeth Whitening
 - Smile Makeover
 - Veneers
 - Braces
 - Invisalign
-- Pediatric Dentistry
-- Gum Treatment
 - Wisdom Tooth Removal
 - Emergency Dental Care
+
+Removed (client request, 2026-07-30): Dental Crowns, Bridges, Dentures, Dental Implants (prosthodontics-related), Pediatric Dentistry, and Gum Treatment (periodontics-related) were dropped from the service list and deleted from `src/data/services.ts` — the clinic's doctors are BDS generalists, not specialists in these areas, and the client asked for these pages removed rather than reframed.
 
 Each service page should include:
 
@@ -279,6 +279,8 @@ Include:
 - Working Hours
 - WhatsApp CTA (if available)
 - Appointment Form
+
+Working hours (client-confirmed, 2026-07-30): Monday–Saturday 11:00 AM – 7:00 PM. **Closed Sunday, including emergencies** — do not imply 7-day or Sunday emergency availability anywhere on the site.
 
 ---
 

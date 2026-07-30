@@ -15,7 +15,7 @@ const items: TrustBadge[] = [
     icon: Award,
     title: "Experienced Dentists",
     description:
-      "Decades of combined experience across general, cosmetic, and pediatric dentistry.",
+      "Decades of combined experience across general and cosmetic dentistry.",
   },
   {
     icon: ShieldCheck,

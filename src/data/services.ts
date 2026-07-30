@@ -181,7 +181,7 @@ export const services: Service[] = [
       { question: "Is teeth cleaning painful?", answer: "Cleaning is generally comfortable; mild sensitivity can occur if there's significant tartar buildup or gum inflammation." },
       { question: "Will cleaning make my teeth whiter?", answer: "Cleaning removes surface stains and buildup which can noticeably brighten teeth, though it isn't a substitute for whitening treatment." },
     ],
-    relatedServiceSlugs: ["dental-checkups", "gum-treatment", "teeth-whitening"],
+    relatedServiceSlugs: ["dental-checkups", "teeth-whitening"],
   },
   {
     slug: "dental-fillings",
@@ -238,7 +238,7 @@ export const services: Service[] = [
       { question: "How long do fillings last?", answer: "Composite fillings typically last 7–10 years or longer with good oral hygiene." },
       { question: "Can I eat right after a filling?", answer: "It's best to wait until the numbness wears off to avoid accidentally biting your cheek or tongue." },
     ],
-    relatedServiceSlugs: ["root-canal-treatment", "dental-crowns"],
+    relatedServiceSlugs: ["root-canal-treatment", "tooth-extraction"],
   },
   {
     slug: "root-canal-treatment",
@@ -297,7 +297,7 @@ export const services: Service[] = [
       { question: "How many visits does it take?", answer: "Most root canals are completed in 1–2 visits depending on the tooth and severity of infection." },
       { question: "Do I need a crown after a root canal?", answer: "Yes, in most cases — a crown protects the treated tooth, which can become brittle over time, from fracturing." },
     ],
-    relatedServiceSlugs: ["dental-crowns", "dental-fillings", "emergency-dental-care"],
+    relatedServiceSlugs: ["dental-fillings", "emergency-dental-care"],
   },
   {
     slug: "tooth-extraction",
@@ -359,236 +359,7 @@ export const services: Service[] = [
       { question: "How long does recovery take?", answer: "Most patients feel back to normal within a few days, with complete gum healing over 1–2 weeks." },
       { question: "What are my options after extraction?", answer: "Depending on the tooth, we may discuss implants, bridges, or dentures to replace it and maintain your bite." },
     ],
-    relatedServiceSlugs: ["wisdom-tooth-removal", "dental-implants", "dentures"],
-  },
-  {
-    slug: "dental-crowns",
-    name: "Dental Crowns",
-    category: "restorative",
-    icon: "Crown",
-    heroImageUrl: heroImage("1663182234283-28941e7612da"),
-    heroImageAlt: "Dental crown restoration on a model tooth",
-    metaTitle: "Dental Crowns in Ujjain | Strong, Natural-Looking Crowns",
-    metaDescription:
-      "Custom dental crowns in Ujjain to restore strength, shape, and appearance to damaged or weakened teeth.",
-    keywords: ["Dental Crowns Ujjain", "Tooth Cap Ujjain", "Dentist in Ujjain"],
-    overview: {
-      heading: "Restoring Strength and Shape",
-      paragraphs: [
-        "A dental crown is a custom-made cap that covers a damaged tooth, restoring its strength, shape, and appearance while protecting it from further damage.",
-        "Crowns are commonly used after root canal treatment, for large fillings, cracked teeth, or to anchor a bridge.",
-      ],
-    },
-    symptoms: {
-      heading: "When a Crown May Be Recommended",
-      items: [
-        "A tooth with a large filling and little natural structure left",
-        "A cracked or fractured tooth",
-        "After root canal treatment",
-        "Severely worn-down teeth",
-        "Cosmetic reshaping of a misshapen tooth",
-      ],
-    },
-    benefits: {
-      heading: "Benefits of Dental Crowns",
-      items: [
-        "Restores full chewing function",
-        "Protects a weakened tooth from further damage",
-        "Natural-looking, durable materials",
-        "Long-lasting solution with proper care",
-      ],
-    },
-    treatmentProcess: {
-      heading: "The Crown Procedure",
-      steps: [
-        { step: 1, title: "Tooth Preparation", description: "The tooth is shaped to make room for the crown." },
-        { step: 2, title: "Impressions", description: "Precise impressions are taken to custom-fit your crown." },
-        { step: 3, title: "Temporary Crown", description: "A temporary crown protects the tooth while the permanent one is made." },
-        { step: 4, title: "Final Placement", description: "The custom crown is fitted, adjusted, and permanently cemented." },
-      ],
-    },
-    recovery: {
-      heading: "Aftercare",
-      paragraphs: ["Mild sensitivity for a few days after placement is normal and typically resolves quickly."],
-      tips: ["Avoid very sticky or hard foods on a new crown initially", "Maintain regular brushing and flossing around the crown margin"],
-    },
-    faqs: [
-      { question: "How long do dental crowns last?", answer: "With good care, crowns typically last 10–15 years or longer." },
-      { question: "Will my crown look natural?", answer: "Yes — modern crown materials are shade-matched to blend seamlessly with your surrounding teeth." },
-      { question: "How many visits does a crown take?", answer: "Typically two visits: one for preparation and impressions, one for final placement." },
-    ],
-    relatedServiceSlugs: ["root-canal-treatment", "dental-bridges", "dental-implants"],
-  },
-  {
-    slug: "dental-bridges",
-    name: "Dental Bridges",
-    category: "restorative",
-    icon: "Layers",
-    heroImageUrl: heroImage("1643916800611-1302e8d27c38"),
-    heroImageAlt: "Dental bridge model showing replacement teeth",
-    metaTitle: "Dental Bridges in Ujjain | Replace Missing Teeth",
-    metaDescription:
-      "Custom dental bridges in Ujjain to replace one or more missing teeth and restore your smile and bite.",
-    keywords: ["Dental Bridges Ujjain", "Missing Teeth Replacement Ujjain", "Dentist in Ujjain"],
-    overview: {
-      heading: "Bridging the Gap Left by Missing Teeth",
-      paragraphs: [
-        "A dental bridge replaces one or more missing teeth by anchoring a replacement tooth to the adjacent natural teeth or implants, restoring both function and appearance.",
-        "Bridges prevent surrounding teeth from shifting into the gap and help maintain your natural bite and facial shape.",
-      ],
-    },
-    symptoms: {
-      heading: "When a Bridge May Help",
-      items: [
-        "One or more missing teeth affecting your bite",
-        "Difficulty chewing on one side",
-        "Surrounding teeth beginning to shift or tilt",
-        "Gaps affecting your speech or confidence to smile",
-      ],
-    },
-    benefits: {
-      heading: "Benefits of Dental Bridges",
-      items: [
-        "Restores full chewing ability",
-        "Prevents adjacent teeth from shifting",
-        "Maintains natural facial structure",
-        "Fixed in place — no removal needed like dentures",
-      ],
-    },
-    treatmentProcess: {
-      heading: "The Bridge Procedure",
-      steps: [
-        { step: 1, title: "Preparation", description: "Anchor teeth on either side of the gap are prepared and shaped." },
-        { step: 2, title: "Impressions", description: "Precise molds ensure a comfortable, natural fit." },
-        { step: 3, title: "Temporary Bridge", description: "Worn while your custom bridge is fabricated." },
-        { step: 4, title: "Final Fitting", description: "The finished bridge is checked, adjusted, and cemented in place." },
-      ],
-    },
-    recovery: {
-      heading: "Aftercare",
-      paragraphs: ["Adjustment to a new bridge typically takes just a few days."],
-      tips: ["Use floss threaders or interdental brushes to clean under the bridge", "Avoid excessively hard or sticky foods initially"],
-    },
-    faqs: [
-      { question: "How long do dental bridges last?", answer: "With proper care, bridges typically last 10–15 years." },
-      { question: "Is a bridge better than an implant?", answer: "Both are effective options — a bridge doesn't require surgery, while implants don't rely on adjacent teeth. We'll help you choose based on your situation." },
-      { question: "Can I eat normally with a bridge?", answer: "Yes, once you adjust to it, a bridge functions much like your natural teeth." },
-    ],
-    relatedServiceSlugs: ["dental-implants", "dental-crowns", "dentures"],
-  },
-  {
-    slug: "dentures",
-    name: "Dentures",
-    category: "restorative",
-    icon: "SmilePlus",
-    heroImageUrl: heroImage("1616391182219-e080b4d1043a"),
-    heroImageAlt: "Complete and partial denture sets",
-    metaTitle: "Dentures in Ujjain | Complete & Partial Dentures",
-    metaDescription:
-      "Comfortable, custom-fit complete and partial dentures in Ujjain to restore your smile and ability to eat and speak confidently.",
-    keywords: ["Dentures Ujjain", "False Teeth Ujjain", "Dentist in Ujjain"],
-    overview: {
-      heading: "Restoring a Full, Confident Smile",
-      paragraphs: [
-        "Dentures are removable replacements for missing teeth, available as complete sets (for a fully edentulous arch) or partial dentures (when some natural teeth remain).",
-        "We custom-fit every denture to your mouth for a comfortable, natural-looking result that restores your ability to eat and speak with confidence.",
-      ],
-    },
-    symptoms: {
-      heading: "When Dentures May Be Recommended",
-      items: [
-        "Multiple missing teeth affecting chewing or speech",
-        "Loose or failing teeth that can't be saved",
-        "A sunken facial appearance from missing teeth",
-        "Difficulty affording or undergoing implant surgery",
-      ],
-    },
-    benefits: {
-      heading: "Benefits of Dentures",
-      items: [
-        "Restores chewing ability and speech clarity",
-        "Supports facial structure and appearance",
-        "Non-surgical, cost-effective tooth replacement",
-        "Custom-made for comfort and natural aesthetics",
-      ],
-    },
-    treatmentProcess: {
-      heading: "The Denture Process",
-      steps: [
-        { step: 1, title: "Assessment", description: "We evaluate your gums, jaw, and any remaining teeth." },
-        { step: 2, title: "Impressions & Measurements", description: "Precise molds and bite measurements are taken." },
-        { step: 3, title: "Trial Fitting", description: "A trial denture lets you preview fit, comfort, and appearance." },
-        { step: 4, title: "Final Fitting", description: "Adjustments are made for a comfortable, secure final fit." },
-      ],
-    },
-    recovery: {
-      heading: "Adjusting to New Dentures",
-      paragraphs: ["A short adjustment period of a few weeks is normal as you get used to speaking and eating with new dentures."],
-      tips: ["Start with soft foods and gradually reintroduce harder foods", "Remove and clean dentures daily as instructed"],
-    },
-    faqs: [
-      { question: "Will dentures look natural?", answer: "Yes — modern dentures are custom-shaded and shaped to closely match natural teeth and gums." },
-      { question: "How long do dentures last?", answer: "With proper care, dentures typically last 5–10 years before needing replacement or relining." },
-      { question: "Can I sleep with my dentures in?", answer: "We generally recommend removing dentures at night to let your gums rest and to keep them clean." },
-    ],
-    relatedServiceSlugs: ["dental-bridges", "dental-implants", "tooth-extraction"],
-  },
-  {
-    slug: "dental-implants",
-    name: "Dental Implants",
-    category: "surgical",
-    icon: "ShieldCheck",
-    heroImageUrl: heroImage("1593022356769-11f762e25ed9"),
-    heroImageAlt: "Dental implant model showing titanium post and crown",
-    metaTitle: "Dental Implants in Ujjain | Permanent Tooth Replacement",
-    metaDescription:
-      "Long-lasting dental implants in Ujjain — a permanent, natural-looking solution for missing teeth from Dr. Govind Singh & Dr. Preeti Singh.",
-    keywords: ["Dental Implants Ujjain", "Tooth Implant Ujjain", "Dentist in Ujjain"],
-    overview: {
-      heading: "The Gold Standard for Missing Teeth",
-      paragraphs: [
-        "Dental implants replace missing teeth at the root, using a titanium post fused with the jawbone to support a natural-looking crown — the closest thing to your original tooth.",
-        "Unlike bridges or dentures, implants don't rely on adjacent teeth and help preserve jawbone density over time.",
-      ],
-    },
-    symptoms: {
-      heading: "When Implants May Be Right for You",
-      items: [
-        "A single missing tooth you'd like replaced permanently",
-        "Multiple missing teeth without wanting a removable option",
-        "Loose or uncomfortable dentures",
-        "Adequate jawbone density (assessed during consultation)",
-      ],
-    },
-    benefits: {
-      heading: "Benefits of Dental Implants",
-      items: [
-        "Look, feel, and function like natural teeth",
-        "Don't require altering adjacent healthy teeth",
-        "Help preserve jawbone and facial structure",
-        "Durable, long-term solution with proper care",
-      ],
-    },
-    treatmentProcess: {
-      heading: "The Implant Journey",
-      steps: [
-        { step: 1, title: "Consultation & Planning", description: "Imaging assesses bone density and plans precise implant placement." },
-        { step: 2, title: "Implant Placement", description: "The titanium post is surgically placed into the jawbone." },
-        { step: 3, title: "Healing & Osseointegration", description: "The implant fuses with the bone over a few months." },
-        { step: 4, title: "Abutment & Crown", description: "A custom crown is attached to complete your new tooth." },
-      ],
-    },
-    recovery: {
-      heading: "Healing After Implant Surgery",
-      paragraphs: ["Mild swelling and discomfort for a few days after placement is normal; full osseointegration takes several months before the final crown is fitted."],
-      tips: ["Stick to soft foods for the first week", "Avoid smoking, which can slow healing", "Maintain excellent oral hygiene around the implant site"],
-    },
-    faqs: [
-      { question: "Is the implant procedure painful?", answer: "The surgery is performed under local anesthesia; most patients report only mild discomfort during recovery, managed with standard pain relief." },
-      { question: "How long do dental implants last?", answer: "With good oral hygiene, implants can last 15–25 years or even a lifetime." },
-      { question: "Am I a candidate for implants?", answer: "Most healthy adults with adequate jawbone density are candidates — we'll confirm this with an examination and imaging during consultation." },
-    ],
-    relatedServiceSlugs: ["dental-crowns", "tooth-extraction", "dentures"],
+    relatedServiceSlugs: ["wisdom-tooth-removal", "root-canal-treatment"],
   },
   {
     slug: "teeth-whitening",
@@ -701,7 +472,7 @@ export const services: Service[] = [
       { question: "What treatments are typically included?", answer: "Common combinations include whitening, veneers, crowns, and minor alignment — customized to your goals." },
       { question: "Is a smile makeover expensive?", answer: "Cost depends on the treatments chosen; we provide transparent pricing and can phase treatment to fit your budget." },
     ],
-    relatedServiceSlugs: ["veneers", "teeth-whitening", "dental-crowns"],
+    relatedServiceSlugs: ["veneers", "teeth-whitening"],
   },
   {
     slug: "veneers",
@@ -758,7 +529,7 @@ export const services: Service[] = [
       { question: "How long do veneers last?", answer: "Porcelain veneers typically last 10–15 years or more with good care." },
       { question: "Do veneers stain?", answer: "Porcelain veneers are highly stain-resistant, though maintaining good oral hygiene helps preserve their appearance." },
     ],
-    relatedServiceSlugs: ["smile-makeover", "teeth-whitening", "dental-crowns"],
+    relatedServiceSlugs: ["smile-makeover", "teeth-whitening"],
   },
   {
     slug: "braces",
@@ -874,120 +645,6 @@ export const services: Service[] = [
       { question: "Can I eat with aligners in?", answer: "Aligners should be removed before eating or drinking anything other than water to avoid staining or damage." },
     ],
     relatedServiceSlugs: ["braces", "teeth-whitening"],
-  },
-  {
-    slug: "pediatric-dentistry",
-    name: "Pediatric Dentistry",
-    category: "pediatric",
-    icon: "Baby",
-    heroImageUrl: heroImage("1677728401315-afb604c2186d"),
-    heroImageAlt: "Gentle pediatric dental checkup for a child",
-    metaTitle: "Pediatric Dentist in Ujjain | Kids Dental Care",
-    metaDescription:
-      "Gentle, child-friendly pediatric dentistry in Ujjain from Dr. Preeti Singh — checkups, cleanings, and preventive care for kids.",
-    keywords: ["Pediatric Dentist Ujjain", "Kids Dentist Ujjain", "Children Dental Care Ujjain"],
-    overview: {
-      heading: "Gentle Dental Care for Children",
-      paragraphs: [
-        "Pediatric dentistry focuses on the unique dental needs of infants, children, and teens, in a friendly, reassuring environment designed to make dental visits a positive experience.",
-        "Dr. Preeti Singh has a special interest in working with children, using a gentle, patient approach to build comfort and confidence from an early age.",
-      ],
-    },
-    symptoms: {
-      heading: "When to Bring Your Child In",
-      items: [
-        "First tooth eruption or by their first birthday",
-        "Complaints of tooth pain or sensitivity",
-        "Visible cavities or discoloration on baby teeth",
-        "Thumb-sucking or other habits affecting tooth alignment",
-      ],
-    },
-    benefits: {
-      heading: "Benefits of Early Dental Care",
-      items: [
-        "Establishes positive dental habits early",
-        "Catches developmental issues before they worsen",
-        "Reduces dental anxiety through gentle, familiar care",
-        "Protects both baby teeth and developing permanent teeth",
-      ],
-    },
-    treatmentProcess: {
-      heading: "A Child-Friendly Visit",
-      steps: [
-        { step: 1, title: "Warm Welcome", description: "We help your child feel comfortable before any examination begins." },
-        { step: 2, title: "Gentle Examination", description: "A friendly, age-appropriate check of teeth and gums." },
-        { step: 3, title: "Preventive Care", description: "Cleaning, fluoride, or sealants as appropriate for their age." },
-        { step: 4, title: "Parent Guidance", description: "Tips on brushing, diet, and habits to support healthy teeth at home." },
-      ],
-    },
-    recovery: {
-      heading: "After the Visit",
-      paragraphs: ["Most pediatric visits require no downtime — children can return to school or play right away."],
-    },
-    faqs: [
-      { question: "When should my child's first dental visit be?", answer: "We recommend a first visit by their first birthday or within six months of the first tooth appearing." },
-      { question: "Do baby teeth really need treatment if they'll fall out?", answer: "Yes — baby teeth guide permanent teeth into position and support chewing and speech, so cavities should still be treated." },
-      { question: "How can I help my child feel comfortable at the dentist?", answer: "Bringing them early for friendly checkups (before any problems arise) helps build positive associations with dental visits." },
-    ],
-    relatedServiceSlugs: ["dental-checkups", "teeth-cleaning", "gum-treatment"],
-  },
-  {
-    slug: "gum-treatment",
-    name: "Gum Treatment",
-    category: "general",
-    icon: "HeartPulse",
-    heroImageUrl: heroImage("1662837625420-2b5fbaacec98"),
-    heroImageAlt: "Periodontal gum treatment procedure",
-    metaTitle: "Gum Treatment in Ujjain | Periodontal Care",
-    metaDescription:
-      "Effective gum disease treatment in Ujjain — from scaling and root planing to advanced periodontal care for healthier gums.",
-    keywords: ["Gum Treatment Ujjain", "Periodontist Ujjain", "Gum Disease Treatment Ujjain"],
-    overview: {
-      heading: "Protecting the Foundation of Your Smile",
-      paragraphs: [
-        "Healthy gums are the foundation of a healthy mouth. Gum treatment addresses gingivitis and periodontal disease, ranging from professional deep cleaning to more advanced periodontal therapy.",
-        "Left untreated, gum disease can lead to tooth loss and has been linked to broader health issues — early treatment makes a significant difference.",
-      ],
-    },
-    symptoms: {
-      heading: "Signs of Gum Disease",
-      items: [
-        "Red, swollen, or tender gums",
-        "Bleeding while brushing or flossing",
-        "Persistent bad breath",
-        "Gums pulling away from teeth",
-        "Loose or shifting teeth",
-      ],
-    },
-    benefits: {
-      heading: "Benefits of Gum Treatment",
-      items: [
-        "Stops gum disease progression",
-        "Reduces bleeding, swelling, and discomfort",
-        "Protects against tooth loss",
-        "Supports overall health, not just oral health",
-      ],
-    },
-    treatmentProcess: {
-      heading: "The Gum Treatment Process",
-      steps: [
-        { step: 1, title: "Periodontal Assessment", description: "Gum pockets are measured to assess disease severity." },
-        { step: 2, title: "Scaling & Root Planing", description: "Deep cleaning removes plaque and tartar below the gumline." },
-        { step: 3, title: "Treatment", description: "Additional therapy is provided for more advanced cases as needed." },
-        { step: 4, title: "Maintenance Plan", description: "A follow-up schedule helps keep gum disease from returning." },
-      ],
-    },
-    recovery: {
-      heading: "Aftercare",
-      paragraphs: ["Some tenderness for a few days after deep cleaning is normal and improves quickly with good home care."],
-      tips: ["Use a soft-bristled toothbrush during recovery", "Follow any prescribed rinses or medication as directed"],
-    },
-    faqs: [
-      { question: "Is gum treatment painful?", answer: "We use local anesthesia when needed for deep cleaning, keeping the procedure comfortable." },
-      { question: "Can gum disease be reversed?", answer: "Early-stage gingivitis is often reversible with professional treatment and improved home care; more advanced disease can be effectively managed." },
-      { question: "How often will I need follow-up cleanings?", answer: "Patients with a history of gum disease often benefit from cleanings every 3–4 months instead of the standard six." },
-    ],
-    relatedServiceSlugs: ["teeth-cleaning", "dental-checkups"],
   },
   {
     slug: "wisdom-tooth-removal",

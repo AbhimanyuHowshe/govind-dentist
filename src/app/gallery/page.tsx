@@ -12,7 +12,7 @@ import type { GalleryCategory } from "@/types/gallery";
 export const metadata: Metadata = buildMetadata({
   title: "Gallery",
   description:
-    "Take a look inside Dr. Govind Singh & Dr. Preeti Singh Dental Clinic in Ujjain — reception, treatment rooms, equipment, and sterilization standards.",
+    "Take a look inside Dr. Singh Dental Clinic in Ujjain — reception, treatment rooms, equipment, and sterilization standards.",
   path: "/gallery",
 });
 

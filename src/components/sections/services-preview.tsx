@@ -9,10 +9,10 @@ import { services } from "@/data/services";
 const featuredSlugs = [
   "general-dentistry",
   "root-canal-treatment",
-  "dental-implants",
+  "dental-fillings",
   "teeth-whitening",
   "braces",
-  "pediatric-dentistry",
+  "veneers",
   "smile-makeover",
   "emergency-dental-care",
 ];

@@ -15,7 +15,7 @@ import { testimonials } from "@/data/testimonials";
 export const metadata: Metadata = buildMetadata({
   title: "Patient Testimonials",
   description:
-    "Read what patients say about Dr. Govind Singh & Dr. Preeti Singh Dental Clinic in Ujjain — real reviews and success stories.",
+    "Read what patients say about Dr. Singh Dental Clinic in Ujjain — real reviews and success stories.",
   path: "/testimonials",
 });
 

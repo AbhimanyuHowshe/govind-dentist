@@ -24,8 +24,6 @@ export interface SiteConfig {
   };
   phone: string;
   phoneDisplay: string;
-  landline: string;
-  landlineDisplay: string;
   email: string;
   whatsappNumber: string | null;
   hours: BusinessHours[];

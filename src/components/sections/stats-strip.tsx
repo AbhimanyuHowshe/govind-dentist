@@ -17,12 +17,12 @@ const stats = [
   {
     value: doctors.length,
     suffix: "",
-    label: "Specialist Dentists",
+    label: "Experienced Dentists",
   },
   {
-    value: 7,
+    value: 6,
     suffix: "",
-    label: "Days a Week, Emergencies Welcome",
+    label: "Days a Week Open",
   },
 ];
 

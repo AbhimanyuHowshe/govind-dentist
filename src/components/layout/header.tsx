@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Phone, Stethoscope } from "lucide-react";
+import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/shared/magnetic";
@@ -29,19 +30,18 @@ export function Header() {
       <div
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 transition-all duration-300 sm:px-6 lg:px-8",
-          scrolled ? "h-14" : "h-16"
+          scrolled ? "h-16" : "h-20"
         )}
       >
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-heading text-lg font-semibold text-brand-navy"
-        >
-          <Stethoscope
-            className="size-6 text-brand-blue"
-            aria-hidden="true"
+        <Link href="/" className="flex items-center" aria-label={siteConfig.shortName}>
+          <Image
+            src="/images/logo.png"
+            alt={siteConfig.shortName}
+            width={767}
+            height={365}
+            priority
+            className="h-11 w-auto sm:h-14"
           />
-          <span className="hidden sm:inline">{siteConfig.shortName}</span>
-          <span className="sm:hidden">Dr. Govind &amp; Dr. Preeti</span>
         </Link>
 
         <nav

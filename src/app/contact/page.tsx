@@ -12,7 +12,7 @@ import { siteConfig, fullAddressString } from "@/data/site-config";
 export const metadata: Metadata = buildMetadata({
   title: "Contact Us",
   description:
-    "Contact Dr. Govind Singh & Dr. Preeti Singh Dental Clinic in Ujjain — address, phone, working hours, and online appointment booking.",
+    "Contact Dr. Singh Dental Clinic in Ujjain — address, phone, working hours, and online appointment booking.",
   path: "/contact",
 });
 
@@ -48,13 +48,6 @@ export default function ContactPage() {
               >
                 <Phone className="size-5 shrink-0 text-brand-blue" aria-hidden="true" />
                 {siteConfig.phoneDisplay}
-              </a>
-              <a
-                href={`tel:${siteConfig.landline}`}
-                className="flex items-center gap-3 text-muted-foreground hover:text-brand-blue"
-              >
-                <Phone className="size-5 shrink-0 text-brand-blue" aria-hidden="true" />
-                {siteConfig.landlineDisplay}
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}

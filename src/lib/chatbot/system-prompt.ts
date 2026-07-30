@@ -56,8 +56,7 @@ Tagline: ${siteConfig.tagline}
 Description: ${siteConfig.description}
 
 Address: ${fullAddressString}
-Phone (mobile): ${siteConfig.phoneDisplay}
-Phone (landline): ${siteConfig.landlineDisplay}
+Phone: ${siteConfig.phoneDisplay}
 Email: ${siteConfig.email}
 
 Working Hours:
