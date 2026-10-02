@@ -79,8 +79,21 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-white/50 sm:px-6 lg:px-8">
-        © {new Date().getFullYear()} {siteConfig.clinicName}. All rights
-        reserved.
+        <p>
+          © {new Date().getFullYear()} {siteConfig.clinicName}. All rights
+          reserved.
+        </p>
+        <p className="mt-1.5">
+          Designed by{" "}
+          <a
+            href="https://aiinity.in"
+            target="_blank"
+            rel="noopener"
+            className="font-semibold text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline"
+          >
+            aiinity.in
+          </a>
+        </p>
       </div>
     </footer>
   );

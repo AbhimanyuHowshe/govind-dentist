@@ -8,7 +8,7 @@ export function serviceSchema(service: Service) {
     name: service.name,
     description: service.metaDescription,
     url: `${siteConfig.url}/services/${service.slug}`,
-    image: service.heroImageUrl,
+    image: `${siteConfig.url}${service.heroImageUrl}`,
     provider: {
       "@id": `${siteConfig.url}/#clinic`,
     },

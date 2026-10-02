@@ -12,8 +12,8 @@ export function AboutClinicPreview() {
         <Reveal className="relative aspect-4/3 w-full overflow-hidden rounded-2xl shadow-xl shadow-brand-navy/10 ring-1 ring-black/5">
           <ImageWipeReveal className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&q=80"
-              alt="Interior of Dr. Singh Dental Clinic"
+              src="/images/clinic/reception-waiting-area.png"
+              alt="Reception and waiting area of Dr. Singh Dental Clinic"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 500px, 100vw"

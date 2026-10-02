@@ -20,7 +20,7 @@ export function MeetDoctorsPreview() {
         </Reveal>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {doctors.map((doctor, i) => (
-            <Reveal key={doctor.slug} direction={i % 2 === 0 ? "left" : "right"}>
+            <Reveal key={doctor.slug} direction={i % 2 === 0 ? "left" : "right"} className="h-full">
               <DoctorCard doctor={doctor} variant="summary" />
             </Reveal>
           ))}

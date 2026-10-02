@@ -5,8 +5,6 @@ export const doctors: Doctor[] = [
     slug: "dr-govind-singh",
     name: "Dr. Govind Singh",
     title: "BDS",
-    photoUrl: "/images/doctors/dr-govind-singh.jpg",
-    photoAlt: "Portrait of Dr. Govind Singh",
     qualifications: ["Bachelor of Dental Surgery (BDS)"],
     experienceYears: 25,
     expertiseAreas: [
@@ -23,8 +21,6 @@ export const doctors: Doctor[] = [
     slug: "dr-preeti-singh",
     name: "Dr. Preeti Singh",
     title: "BDS",
-    photoUrl: "/images/doctors/dr-preeti-singh.jpg",
-    photoAlt: "Portrait of Dr. Preeti Singh",
     qualifications: ["Bachelor of Dental Surgery (BDS)"],
     experienceYears: 25,
     specialInterests: [

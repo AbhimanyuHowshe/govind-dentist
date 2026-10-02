@@ -5,7 +5,5 @@ export interface Testimonial {
   text: string;
   treatmentType?: string;
   source: "google" | "clinic";
-  beforeImageUrl?: string;
-  afterImageUrl?: string;
   consentGiven: boolean;
 }

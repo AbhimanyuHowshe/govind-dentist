@@ -11,6 +11,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema/breadcrumb-schema";
 import { reviewSchema } from "@/lib/schema/review-schema";
 import { testimonials } from "@/data/testimonials";
+import { beforeAfterCases } from "@/data/before-after";
 
 export const metadata: Metadata = buildMetadata({
   title: "Patient Testimonials",
@@ -20,10 +21,6 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function TestimonialsPage() {
-  const beforeAfterCases = testimonials.filter(
-    (t) => t.consentGiven && t.beforeImageUrl && t.afterImageUrl
-  );
-
   return (
     <>
       <JsonLd
@@ -71,16 +68,16 @@ export default function TestimonialsPage() {
               />
             </Reveal>
             <div className="flex flex-col gap-10">
-              {beforeAfterCases.map((testimonial, i) => (
-                <Reveal key={testimonial.id} delay={Math.min(i * 0.1, 0.3)}>
+              {beforeAfterCases.map((item, i) => (
+                <Reveal key={item.id} delay={Math.min(i * 0.1, 0.3)}>
                   <div className="grid grid-cols-2 gap-4">
                     <ImageWipeReveal
                       direction="left"
                       className="relative aspect-square overflow-hidden rounded-xl"
                     >
                       <Image
-                        src={testimonial.beforeImageUrl!}
-                        alt={`Before treatment photo of ${testimonial.patientName}`}
+                        src={item.beforeImageUrl}
+                        alt={`${item.title} — before treatment`}
                         fill
                         className="object-cover"
                         sizes="(min-width: 1024px) 400px, 45vw"
@@ -88,8 +85,8 @@ export default function TestimonialsPage() {
                     </ImageWipeReveal>
                     <ImageWipeReveal className="relative aspect-square overflow-hidden rounded-xl">
                       <Image
-                        src={testimonial.afterImageUrl!}
-                        alt={`After treatment photo of ${testimonial.patientName}`}
+                        src={item.afterImageUrl}
+                        alt={`${item.title} — after treatment`}
                         fill
                         className="object-cover"
                         sizes="(min-width: 1024px) 400px, 45vw"
@@ -97,7 +94,7 @@ export default function TestimonialsPage() {
                     </ImageWipeReveal>
                   </div>
                   <p className="mt-3 text-center text-sm font-medium text-brand-navy">
-                    {testimonial.patientName} — {testimonial.treatmentType}
+                    {item.title}
                   </p>
                 </Reveal>
               ))}

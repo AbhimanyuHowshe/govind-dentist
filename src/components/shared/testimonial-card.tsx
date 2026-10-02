@@ -13,7 +13,7 @@ function getInitials(name: string) {
 
 export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <figure className="relative flex flex-col gap-4 rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/5">
+    <figure className="relative flex flex-col gap-4 rounded-2xl border card-sky p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/5">
       <Quote
         className="absolute top-5 right-5 size-10 text-brand-blue/10"
         aria-hidden="true"

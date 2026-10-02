@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { GraduationCap, Award } from "lucide-react";
 import type { Doctor } from "@/types/doctor";
 
@@ -10,17 +9,8 @@ export function DoctorCard({
   variant?: "full" | "summary";
 }) {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/5">
-      <div className="relative aspect-4/5 w-full overflow-hidden bg-brand-soft-gray">
-        <Image
-          src={doctor.photoUrl}
-          alt={doctor.photoAlt}
-          fill
-          className="object-cover grayscale-[60%] transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
-          sizes="(min-width: 1024px) 400px, 100vw"
-        />
-      </div>
-      <div className="flex flex-col gap-3 p-6">
+    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border card-sky shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/5">
+      <div className="flex flex-1 flex-col gap-3 p-6">
         <div>
           <h3 className="font-heading text-xl font-semibold text-brand-navy">
             {doctor.name}
@@ -78,7 +68,7 @@ export function DoctorCard({
               </ul>
             </div>
 
-            <p className="border-t border-border pt-3 text-sm text-muted-foreground italic">
+            <p className="mt-auto border-t border-border pt-3 text-sm text-muted-foreground italic">
               &ldquo;{doctor.philosophy}&rdquo;
             </p>
           </>

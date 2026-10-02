@@ -94,8 +94,8 @@ export function Hero() {
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1704455306251-b4634215d98f?w=1600&q=80"
-                  alt="Bright, modern dental treatment room"
+                  src="/images/clinic/treatment-hall.jpg"
+                  alt="Modern treatment hall at Dr. Singh Dental Clinic, Ujjain"
                   fill
                   priority
                   className="object-cover"
@@ -103,7 +103,7 @@ export function Hero() {
                 />
               </motion.div>
             </div>
-            <div className="absolute -bottom-5 -left-5 hidden items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 shadow-lg sm:flex">
+            <div className="absolute -bottom-5 -left-5 hidden items-center gap-3 rounded-xl border card-sky px-4 py-3 shadow-lg sm:flex">
               <div className="flex size-10 items-center justify-center rounded-full bg-brand-accent/10 text-brand-accent">
                 <ShieldCheck className="size-5" aria-hidden="true" />
               </div>

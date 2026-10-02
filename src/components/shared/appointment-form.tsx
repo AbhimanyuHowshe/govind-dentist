@@ -93,7 +93,7 @@ export function AppointmentForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-background p-8 text-center">
+      <div className="flex flex-col items-center gap-4 rounded-xl border card-sky p-8 text-center">
         <CheckCircle2 className="size-12 text-brand-emerald" aria-hidden="true" />
         <h3 className="font-heading text-xl font-semibold text-brand-navy">
           Thank You!
@@ -123,7 +123,7 @@ export function AppointmentForm() {
       onSubmit={handleSubmit(onSubmit)}
       aria-labelledby="appointment-form-heading"
       noValidate
-      className="flex flex-col gap-6 rounded-xl border border-border bg-background p-6 sm:p-8"
+      className="flex flex-col gap-6 rounded-xl border card-sky p-6 sm:p-8"
     >
       <h2
         id="appointment-form-heading"

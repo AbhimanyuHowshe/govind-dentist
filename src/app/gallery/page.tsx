@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/gallery",
 });
 
-const categories: { value: GalleryCategory | "all"; label: string }[] = [
+const allCategories: { value: GalleryCategory | "all"; label: string }[] = [
   { value: "all", label: "All" },
   { value: "reception", label: "Reception" },
   { value: "treatment-rooms", label: "Treatment Rooms" },
@@ -24,6 +24,12 @@ const categories: { value: GalleryCategory | "all"; label: string }[] = [
   { value: "sterilization", label: "Sterilization" },
   { value: "interiors", label: "Interiors" },
 ];
+
+// Hide tabs for categories that don't have any photos yet.
+const categories = allCategories.filter(
+  (cat) =>
+    cat.value === "all" || galleryImages.some((img) => img.category === cat.value)
+);
 
 export default function GalleryPage() {
   return (

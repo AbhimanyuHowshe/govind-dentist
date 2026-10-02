@@ -197,6 +197,8 @@ Include:
 - Professional memberships
 - Patient care approach
 
+Doctor photos (removed 2026-10-02, client request): doctor cards show details only — no portraits. Ignore the "Professional photo" items above unless the client supplies new photos.
+
 Doctor facts (updated 2026-07-30, client-confirmed — supersedes any earlier MDS/specialization claims in data files): both doctors are **BDS only** (general dentists, not MDS specialists), each with **25+ years of individual experience**. Do not attribute Prosthodontics, Periodontics, or Pedodontics specialty degrees/memberships to either doctor.
 
 ---
@@ -343,10 +345,10 @@ Full "reference demo" animation set is intentionally implemented site-wide (expl
 - Scroll progress bar, fixed top (`scroll-progress-bar.tsx`).
 - Back-to-top button, appears after 600px scroll (`back-to-top.tsx`).
 - Sticky header that shrinks + gains shadow on scroll (`layout/header.tsx`).
+- Header logo (`layout/brand-logo.tsx`): the client's original `public/images/logo.png` on a white badge with an animated blue→violet→plum gradient ring + glow (`.logo-ring` in globals.css), shine sweep on hover, shrinks with the header.
 - Split-letter heading reveal on scroll, used for Hero h1 and all `SectionHeading` titles (`split-heading.tsx`).
 - Animated gradient text sweep — reserved for two high-impact spots only (final CTA banner headings), not applied to every heading, to avoid nonstop competing motion (`.gradient-text` / `.gradient-text-light` in globals.css).
 - Count-up stat numbers wrapped in animated circular SVG progress rings (`circular-stat.tsx`, used in `stats-strip.tsx`).
-- Doctor photo grayscale → color bloom on hover (`doctor-card.tsx`).
 - Hero image "breathing" scale pulse + scroll-linked parallax (`hero.tsx`).
 - 3D pointer-tracked tilt on service cards (`tilt-card.tsx`).
 - Icon-box gradient fill-from-bottom on hover (`trust-badges.tsx`).

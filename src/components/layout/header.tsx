@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -9,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/shared/magnetic";
 import { mainNav } from "@/data/nav";
 import { siteConfig } from "@/data/site-config";
+import { BrandLogo } from "@/components/layout/brand-logo";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,15 +33,12 @@ export function Header() {
           scrolled ? "h-16" : "h-20"
         )}
       >
-        <Link href="/" className="flex items-center" aria-label={siteConfig.shortName}>
-          <Image
-            src="/images/logo.png"
-            alt={siteConfig.shortName}
-            width={767}
-            height={365}
-            priority
-            className="h-11 w-auto sm:h-14"
-          />
+        <Link
+          href="/"
+          className="flex items-center rounded-full outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          aria-label={`${siteConfig.shortName} — home`}
+        >
+          <BrandLogo compact={scrolled} />
         </Link>
 
         <nav

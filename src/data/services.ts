@@ -1,18 +1,17 @@
 import type { Service } from "@/types/service";
 
-function heroImage(photoId: string) {
-  return `https://images.unsplash.com/photo-${photoId}?w=1600&q=80`;
+// Hero images are real clinic photos (client-provided) from public/images/clinic.
+function heroImage(name: string) {
+  return `/images/clinic/${name}`;
 }
 
-// PLACEHOLDER: heroImageUrl values use Unsplash stock photography stand-ins and must
-// be replaced with real clinical/procedure photography before launch. See PLACEHOLDER_CONTENT.md.
 export const services: Service[] = [
   {
     slug: "general-dentistry",
     name: "General Dentistry",
     category: "general",
     icon: "Stethoscope",
-    heroImageUrl: heroImage("1704455306925-1401c3012117"),
+    heroImageUrl: heroImage("treatment-hall.jpg"),
     heroImageAlt: "Dentist performing a general dental examination",
     metaTitle: "General Dentistry in Ujjain | Family Dentist Ujjain",
     metaDescription:
@@ -75,7 +74,7 @@ export const services: Service[] = [
     name: "Dental Checkups",
     category: "general",
     icon: "ClipboardCheck",
-    heroImageUrl: heroImage("1609207825181-52d3214556dd"),
+    heroImageUrl: heroImage("treatment-chair.jpg"),
     heroImageAlt: "Routine dental checkup and examination",
     metaTitle: "Dental Checkup in Ujjain | Routine Dental Exams",
     metaDescription:
@@ -131,7 +130,7 @@ export const services: Service[] = [
     name: "Teeth Cleaning",
     category: "general",
     icon: "Sparkles",
-    heroImageUrl: heroImage("1663185551550-f8f56529ac5e"),
+    heroImageUrl: heroImage("equipment-counter.jpg"),
     heroImageAlt: "Professional dental teeth cleaning procedure",
     metaTitle: "Professional Teeth Cleaning in Ujjain",
     metaDescription:
@@ -188,7 +187,7 @@ export const services: Service[] = [
     name: "Dental Fillings",
     category: "restorative",
     icon: "Wrench",
-    heroImageUrl: heroImage("1670250492416-570b5b7343b1"),
+    heroImageUrl: heroImage("treatment-hall-window.jpg"),
     heroImageAlt: "Dentist placing a tooth-colored dental filling",
     metaTitle: "Dental Fillings in Ujjain | Tooth-Colored Fillings",
     metaDescription:
@@ -245,7 +244,7 @@ export const services: Service[] = [
     name: "Root Canal Treatment",
     category: "restorative",
     icon: "Syringe",
-    heroImageUrl: heroImage("1777444969135-caf869407707"),
+    heroImageUrl: heroImage("treatment-chair.jpg"),
     heroImageAlt: "Root canal treatment procedure at the dental clinic",
     metaTitle: "Root Canal Treatment in Ujjain | Painless RCT",
     metaDescription:
@@ -304,7 +303,7 @@ export const services: Service[] = [
     name: "Tooth Extraction",
     category: "surgical",
     icon: "CircleMinus",
-    heroImageUrl: heroImage("1662837625421-5fd8ed6131a0"),
+    heroImageUrl: heroImage("treatment-hall-consultation.jpg"),
     heroImageAlt: "Tooth extraction procedure",
     metaTitle: "Tooth Extraction in Ujjain | Safe & Painless Extractions",
     metaDescription:
@@ -366,7 +365,7 @@ export const services: Service[] = [
     name: "Teeth Whitening",
     category: "cosmetic",
     icon: "Sun",
-    heroImageUrl: heroImage("1677026010083-78ec7f1b84ed"),
+    heroImageUrl: heroImage("reception-desk.jpg"),
     heroImageAlt: "Professional teeth whitening treatment",
     metaTitle: "Teeth Whitening in Ujjain | Professional Whitening Treatment",
     metaDescription:
@@ -423,7 +422,7 @@ export const services: Service[] = [
     name: "Smile Makeover",
     category: "cosmetic",
     icon: "WandSparkles",
-    heroImageUrl: heroImage("1489278353717-f64c6ee8a4d2"),
+    heroImageUrl: heroImage("reception-waiting-area.png"),
     heroImageAlt: "Smile makeover cosmetic dentistry results",
     metaTitle: "Smile Makeover in Ujjain | Complete Cosmetic Transformation",
     metaDescription:
@@ -479,7 +478,7 @@ export const services: Service[] = [
     name: "Veneers",
     category: "cosmetic",
     icon: "Gem",
-    heroImageUrl: heroImage("1654373535457-383a0a4d00f9"),
+    heroImageUrl: heroImage("reception-desk.jpg"),
     heroImageAlt: "Porcelain dental veneers on model teeth",
     metaTitle: "Dental Veneers in Ujjain | Porcelain Veneers",
     metaDescription:
@@ -536,7 +535,7 @@ export const services: Service[] = [
     name: "Braces",
     category: "orthodontic",
     icon: "Grid2x2Plus",
-    heroImageUrl: heroImage("1656514894252-fb336a3ad6a6"),
+    heroImageUrl: heroImage("treatment-hall-window.jpg"),
     heroImageAlt: "Orthodontic braces on teeth",
     metaTitle: "Braces in Ujjain | Orthodontic Treatment for All Ages",
     metaDescription:
@@ -594,7 +593,7 @@ export const services: Service[] = [
     name: "Invisalign",
     category: "orthodontic",
     icon: "CircleDashed",
-    heroImageUrl: heroImage("1564420228450-d9a5bc8d6565"),
+    heroImageUrl: heroImage("treatment-hall.jpg"),
     heroImageAlt: "Clear aligner tray for Invisalign treatment",
     metaTitle: "Invisalign & Clear Aligners in Ujjain",
     metaDescription:
@@ -651,7 +650,7 @@ export const services: Service[] = [
     name: "Wisdom Tooth Removal",
     category: "surgical",
     icon: "AlertTriangle",
-    heroImageUrl: heroImage("1663182106210-2d372c45ed23"),
+    heroImageUrl: heroImage("equipment-counter.jpg"),
     heroImageAlt: "Wisdom tooth extraction X-ray and procedure",
     metaTitle: "Wisdom Tooth Removal in Ujjain | Safe Extraction",
     metaDescription:
@@ -713,7 +712,7 @@ export const services: Service[] = [
     name: "Emergency Dental Care",
     category: "emergency",
     icon: "Siren",
-    heroImageUrl: heroImage("1602932213623-cc17e9541bb4"),
+    heroImageUrl: heroImage("treatment-hall-consultation.jpg"),
     heroImageAlt: "Emergency dental care and urgent treatment",
     metaTitle: "Emergency Dentist in Ujjain | Urgent Dental Care",
     metaDescription:

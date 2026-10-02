@@ -7,9 +7,11 @@ import { Reveal } from "@/components/shared/reveal";
 import { galleryImages } from "@/data/gallery";
 
 export function ModernEquipment() {
-  const equipmentImages = galleryImages
-    .filter((img) => img.category === "equipment")
-    .slice(0, 4);
+  // Equipment shots first, then treatment-room shots (chairs, operating lights).
+  const equipmentImages = [
+    ...galleryImages.filter((img) => img.category === "equipment"),
+    ...galleryImages.filter((img) => img.category === "treatment-rooms"),
+  ].slice(0, 4);
 
   return (
     <section className="bg-background">
