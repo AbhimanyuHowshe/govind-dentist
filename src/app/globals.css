@@ -286,34 +286,3 @@
     background-color: #ffffff;
   }
 }
-
-/* Animated gradient ring around the header logo badge (brand-logo.tsx),
-   in the logo's own blue → violet → plum. Static under reduced motion. */
-.logo-ring {
-  background-image: linear-gradient(
-    120deg,
-    #3b82f6,
-    #8b5cf6,
-    #7b2c82,
-    #8b5cf6,
-    #3b82f6
-  );
-  background-size: 300% 300%;
-  animation: logo-ring-shift 8s ease-in-out infinite;
-}
-
-@keyframes logo-ring-shift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .logo-ring {
-    animation: none;
-  }
-}

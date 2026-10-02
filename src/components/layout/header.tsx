@@ -23,7 +23,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur transition-all duration-300 supports-backdrop-filter:bg-background/80",
+        "sticky top-0 z-40 border-b border-border bg-white transition-all duration-300",
         scrolled && "shadow-md shadow-brand-navy/5"
       )}
     >

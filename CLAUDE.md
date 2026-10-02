@@ -345,7 +345,7 @@ Full "reference demo" animation set is intentionally implemented site-wide (expl
 - Scroll progress bar, fixed top (`scroll-progress-bar.tsx`).
 - Back-to-top button, appears after 600px scroll (`back-to-top.tsx`).
 - Sticky header that shrinks + gains shadow on scroll (`layout/header.tsx`).
-- Header logo (`layout/brand-logo.tsx`): the client's original `public/images/logo.png` on a white badge with an animated blue→violet→plum gradient ring + glow (`.logo-ring` in globals.css), shine sweep on hover, shrinks with the header.
+- Header logo (`layout/brand-logo.tsx`): the client's original `public/images/logo.png` shown plain on the solid white header (client request — no badge/frame), shrinks with the header.
 - Split-letter heading reveal on scroll, used for Hero h1 and all `SectionHeading` titles (`split-heading.tsx`).
 - Animated gradient text sweep — reserved for two high-impact spots only (final CTA banner headings), not applied to every heading, to avoid nonstop competing motion (`.gradient-text` / `.gradient-text-light` in globals.css).
 - Count-up stat numbers wrapped in animated circular SVG progress rings (`circular-stat.tsx`, used in `stats-strip.tsx`).
